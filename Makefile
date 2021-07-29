@@ -30,7 +30,7 @@ APPDIR = sample
 INCDIR = include
 BINDIR = bin
 
-CC = gcc
+#CC = gcc
 CFLAGS = -Wall   
 #LDFLAGS = -lwiringPi
 DEBUG = 
