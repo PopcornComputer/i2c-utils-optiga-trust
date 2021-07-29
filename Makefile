@@ -48,7 +48,6 @@ APPS := $(patsubst %.$(SRCEXT),%,$(APPSSRC))
 INCSDIR := $(addprefix -I,$(INCSDIR))
 CFLAGS += -c $(DEBUG) $(INCSDIR) 
 
-.Phony : all
 all : $(APPS)
 
 $(APPS): %: $(OBJECTS) $(INCSSRC) %.o
@@ -63,9 +62,9 @@ $(OBJECTS): %.o: %.$(SRCEXT) $(INCSSRC)
 
 %.o: %.$(SRCEXT) $(INCSSRC)
 	@echo "------- Genrating application objects for $< "
+	@echo "INCSSRC = $(INCSSRC) "
+	@echo "INCSDIR = $(INCSDIR) "
 	@$(CC) $(CFLAGS) $< -o $@
-	@echo "INCSSRC = $(INCSSRC)"
-	@echo "INCSDIR = $(INCSDIR)"
 
 .Phony : clean 
 clean :
