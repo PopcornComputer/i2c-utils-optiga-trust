@@ -30,7 +30,7 @@ APPDIR = sample
 INCDIR = include
 BINDIR = bin
 
-#CC = gcc
+CC = gcc
 CFLAGS = -Wall   
 #LDFLAGS = -lwiringPi
 DEBUG = 
@@ -63,6 +63,8 @@ $(OBJECTS): %.o: %.$(SRCEXT) $(INCSSRC)
 %.o: %.$(SRCEXT) $(INCSSRC)
 	@echo "------- Genrating application objects for $< "
 	@$(CC) $(CFLAGS) $< -o $@
+	@echo "INCSSRC = $(INCSSRC)"
+	@echo "INCSDIR = $(INCSDIR)"
 
 .Phony : clean 
 clean :
