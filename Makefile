@@ -48,6 +48,7 @@ APPS := $(patsubst %.$(SRCEXT),%,$(APPSSRC))
 INCSDIR := $(addprefix -I,$(INCSDIR))
 CFLAGS += -c $(DEBUG) $(INCSDIR) 
 
+.Phony : all
 all : $(APPS)
 
 $(APPS): %: $(OBJECTS) $(INCSSRC) %.o
